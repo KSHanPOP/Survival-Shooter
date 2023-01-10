@@ -44,6 +44,8 @@ public class PlayerHealth : LivingEntity
         playerAudioPlayer.PlayOneShot(hitClip);
 
         base.OnDamage(damage, hitPoint, hitDirection);
+
+        Debug.Log(health);
         healthSlider.value = health / health_Max;
         Debug.Log(health);
     }
