@@ -32,10 +32,4 @@ public class PlayerShooter : MonoBehaviour
 
 
     }
-    private void OnAnimatorIK(int layerIndex)
-    {
-
-    }
-
-
 }

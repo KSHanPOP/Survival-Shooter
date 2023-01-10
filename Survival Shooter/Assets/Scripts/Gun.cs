@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
     {
         muzzleFlashEffect.Play();
 
-        //gunAudioPlayer.PlayOneShot(gunData.shotClip);
+        gunAudioPlayer.PlayOneShot(gunData.shotClip);
 
         // 라인 렌더러를 활성화하여 총알 궤적을 그린다
         bulletLineRenderer.SetPosition(0, fireTransform.position);
