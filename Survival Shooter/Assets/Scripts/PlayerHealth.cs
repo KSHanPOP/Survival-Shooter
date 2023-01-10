@@ -45,6 +45,8 @@ public class PlayerHealth : LivingEntity
 
         // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
+
+        Debug.Log(health);
         healthSlider.value = health / health_Max;
     }
 
