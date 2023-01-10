@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2019070171131961533}
   - component: {fileID: 2019070171120890321}
+  - component: {fileID: 3161148620602180974}
+  - component: {fileID: 5759098720531534050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -85,6 +87,36 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.32802516, y: 0.73065233, z: -0.10551195}
     m_Extent: {x: 0.66185755, y: 0.8997083, z: 0.5952063}
   m_DirtyAABB: 0
+--- !u!114 &3161148620602180974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019070171132460163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb35a43fca40d944ba0648b613a13e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movevAxisName: Vertical
+  moveHAxisName: Horizontal
+  fireButtonName: Fire1
+  reloadButtonName: Reload
+--- !u!114 &5759098720531534050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019070171132460163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a937940c0768b4fadb0c0c5b1fb029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
+  rotateSpeed: 180
 --- !u!1 &2019070171132460189
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,12 +128,9 @@ GameObject:
   - component: {fileID: 2019070171131961507}
   - component: {fileID: 2019070171125026579}
   - component: {fileID: 1526569834320019902}
-  - component: {fileID: 5749461553861447621}
-  - component: {fileID: 5749461553861447622}
-  - component: {fileID: 5749461553861447623}
-  m_Layer: 3
-  m_Name: Player
-  m_TagString: Player
+  m_Layer: 0
+  m_Name: Player123
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 2019070171132460189}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f1d84cc28597f5641a3d9cbc4df7e306, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7eef0f15dfe7bb04d8b08396731b8791, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -160,50 +189,6 @@ MonoBehaviour:
   moveHAxisName: Horizontal
   fireButtonName: Fire1
   reloadButtonName: Reload
---- !u!54 &5749461553861447621
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019070171132460189}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 20
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!136 &5749461553861447622
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019070171132460189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3553979
-  m_Height: 1.00964
-  m_Direction: 1
-  m_Center: {x: 0.14460209, y: 0.5350276, z: 0}
---- !u!114 &5749461553861447623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019070171132460189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a937940c0768b4fadb0c0c5b1fb029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotateSpeed: 180
 --- !u!1 &2019070171132460241
 GameObject:
   m_ObjectHideFlags: 0
