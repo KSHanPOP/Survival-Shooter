@@ -18,7 +18,6 @@ public class PlayerInput : MonoBehaviour
         moveV = Input.GetAxis(movevAxisName);
         moveH = Input.GetAxis(moveHAxisName);
         fire = Input.GetButton(fireButtonName);
-        if(fire) { Debug.Log("shot happy"); }
         //reload = Input.GetButtonDown(reloadButtonName);
 
         mousePos = Input.mousePosition;
