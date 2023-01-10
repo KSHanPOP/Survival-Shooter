@@ -12,7 +12,7 @@ public class PlayerHealth : LivingEntity
 
     private PlayerMovement playerMovement; // 플레이어 움직임 컴포넌트
     private PlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
-
+    
     private void Awake()
     {
         // 사용할 컴포넌트를 가져오기
@@ -43,11 +43,14 @@ public class PlayerHealth : LivingEntity
 
         playerAudioPlayer.PlayOneShot(hitClip);
 
-        // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
         healthSlider.value = health / health_Max;
+        Debug.Log(health);
     }
-
+    public float GetHP()
+    {
+        return health;
+    }
     // 사망 처리
     public override void Die()
     {
@@ -56,9 +59,12 @@ public class PlayerHealth : LivingEntity
 
         healthSlider.gameObject.SetActive(false);
         playerAudioPlayer.PlayOneShot(deathClip);
-        playerAnimator.SetTrigger("Die");
 
         playerMovement.enabled = false;
         playerShooter.enabled = false;
+        playerAnimator.SetTrigger("Die");
+
+       // Invoke(UIManager.Instance.gameoverUI.SetActive(true),5f);
+        
     }
 }

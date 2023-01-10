@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         var dir = new Vector3(playerInput.moveH, 0f, playerInput.moveV);
+
     }
     private void Move()
     {
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.MovePosition(playerRigidbody.position + delta);
 
         playerAnimator.SetBool("Move", delta != Vector3.zero);
+
     }
 
     private void Rotate()
