@@ -20,7 +20,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     {
         health -= damage;
 
-        if(health <= 0 && !dead)
+        if (health <= 0 && !dead)
         {
             Die();
         }
@@ -28,8 +28,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
-
-        if(onDeath != null)
+        if (onDeath != null)
         {
             onDeath();
         }

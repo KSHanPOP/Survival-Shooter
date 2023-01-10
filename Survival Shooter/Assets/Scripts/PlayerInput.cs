@@ -18,7 +18,6 @@ public class PlayerInput : MonoBehaviour
         moveV = Input.GetAxis(movevAxisName);
         moveH = Input.GetAxis(moveHAxisName);
         fire = Input.GetButton(fireButtonName);
-        //reload = Input.GetButtonDown(reloadButtonName);
 
         mousePos = Input.mousePosition;
     }

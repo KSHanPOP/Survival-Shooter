@@ -6,7 +6,7 @@ public class Enemy : LivingEntity
 {
     public LayerMask playerLayerMask;
 
-    private LivingEntity player;
+    public LivingEntity player;    
     private NavMeshAgent navMeshAgent;
 
     public ParticleSystem hitEffect;
@@ -14,7 +14,7 @@ public class Enemy : LivingEntity
     public AudioClip hurtSound;
 
     private Animator enemyAnimator;
-    private AudioSource enemyAudioSource;
+    public AudioSource enemyAudioSource;
 
     public float speed = 15f;
     public float damage = 20f;
@@ -44,13 +44,14 @@ public class Enemy : LivingEntity
     // Start is called before the first frame update
     void Start()
     {
+        
         StartCoroutine(UpdatePath());
     }
     private IEnumerator UpdatePath()
     {
         while(!dead)
         {
-            if(isPlayerAlive)
+            if (isPlayerAlive)
             {
                 navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination
@@ -59,7 +60,7 @@ public class Enemy : LivingEntity
             else
             {
                 navMeshAgent.isStopped = true;
-                
+
                 Collider[] colliders =
                     Physics.OverlapSphere(transform.position, searchRadius, playerLayerMask);
 
@@ -67,12 +68,12 @@ public class Enemy : LivingEntity
                 {
                     LivingEntity livingEntity = colliders[i].GetComponent<LivingEntity>();
 
-                    if(livingEntity != null && !livingEntity.dead)
+                    if (livingEntity != null && !livingEntity.dead)
                     {
                         player = livingEntity;
                         break;
-                    }                    
-                }                
+                    }
+                }
             }
 
             yield return new WaitForSeconds(0.25f);
@@ -86,7 +87,7 @@ public class Enemy : LivingEntity
         hitEffect.transform.position = hitPoint;
         hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
         hitEffect.Play();
-
+                
         enemyAudioSource.PlayOneShot(hurtSound);
 
         base.OnDamage(damage, hitPoint, hitNormal);        
@@ -109,6 +110,9 @@ public class Enemy : LivingEntity
 
         enemyAnimator.SetTrigger("Die");
         enemyAudioSource.PlayOneShot(deathSound);
+
+        UIManager.Instance.UpdateScoreText(10);
+        Destroy(gameObject, 5f);
     }
     private void OnTriggerStay(Collider other)
     {

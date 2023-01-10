@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 5749461553861447631}
   m_Layer: 0
   m_Name: Player123
+
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,6 +301,7 @@ MonoBehaviour:
   moveHAxisName: Horizontal
   fireButtonName: Fire1
 --- !u!54 &5749461553861447621
+
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,6 +318,7 @@ Rigidbody:
   m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &5749461553861447622
+
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,6 +333,7 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0.14460209, y: 0.5350276, z: 0}
 --- !u!114 &5749461553861447623
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,6 +348,7 @@ MonoBehaviour:
   moveSpeed: 10
   rotateSpeed: 180
 --- !u!114 &5749461553861447627
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,6 +378,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   hitClip: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
+
 --- !u!1 &2019070171132460241
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +391,7 @@ GameObject:
   - component: {fileID: 2019070171120890323}
   - component: {fileID: 239110042}
   - component: {fileID: 239110044}
+
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -462,6 +469,7 @@ SkinnedMeshRenderer:
     m_Extent: {x: 0.7098157, y: 0.044386514, z: 0.32349673}
   m_DirtyAABB: 0
 --- !u!114 &239110042
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -572,6 +580,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+
 --- !u!1 &2019070171132460245
 GameObject:
   m_ObjectHideFlags: 0
