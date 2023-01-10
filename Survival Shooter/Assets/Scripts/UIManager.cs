@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
+
+    public int score = 0;
     public static UIManager Instance 
     {
         get
@@ -19,13 +23,14 @@ public class UIManager : MonoBehaviour
         }         
     }
 
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;    
     public GameObject gameoverUI;
     public GameObject HitEffectUI;
 
     public void UpdateScoreText(int newScore)
-    {
-        scoreText.text = "SCORE: " + newScore;
+    {              
+        score += newScore;
+        scoreText.text = "SCORE: " + score;
     }
     public void SetActiveGameoverUI(bool active)
     {

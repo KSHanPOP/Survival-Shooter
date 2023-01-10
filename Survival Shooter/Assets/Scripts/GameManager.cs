@@ -47,11 +47,5 @@ public class GameManager : MonoBehaviour
     {
         isGameover = true;
         UIManager.Instance.SetActiveGameoverUI(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    }   
 }

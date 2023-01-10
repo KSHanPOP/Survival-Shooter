@@ -54,19 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerRigidbody.MovePosition(playerRigidbody.position + delta);
 
-        if (delta!=Vector3.zero)
-            playerAnimator.SetBool("Move", true);
-        else
-            playerAnimator.SetBool("Move", false);
-        //if (Input.GetAxisRaw("Vertical") != 0f || Input.GetAxisRaw("Horizontal") != 0f)
-        //    playerAnimator.SetBool("Move", true);
-        //else
-        //    playerAnimator.SetBool("Move", false);
-
-        //if (playerRigidbody.velocity.x == 0f && playerRigidbody.velocity.y == 0f)
-        //else
-        //    playerAnimator.SetFloat("Move", playerInput.moveV);
-
+        playerAnimator.SetBool("Move", delta != Vector3.zero);
     }
 
     private void Rotate()
