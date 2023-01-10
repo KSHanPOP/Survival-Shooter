@@ -20,7 +20,11 @@ public class LivingEntity : MonoBehaviour, IDamageable
     {
         health -= damage;
 
+<<<<<<< HEAD
         if (health <= 0 && !dead)
+=======
+        if(health <= 0 && !dead)
+>>>>>>> a106ad60b49962e8b463a28d0541103af20a3324
         {
             Die();
         }
@@ -28,10 +32,18 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
+<<<<<<< HEAD
         if (onDeath != null)
+=======
+        if(onDeath != null)
+>>>>>>> a106ad60b49962e8b463a28d0541103af20a3324
         {
             onDeath();
         }
         dead = true;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a106ad60b49962e8b463a28d0541103af20a3324
