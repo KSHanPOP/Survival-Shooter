@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb848831f0522c64d8aeacef0a2434b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_Max: 100
+  health_Max: 200
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
   hitEffect: {fileID: 19800000, guid: ef39ae7291c751249b296f00bf6fb042, type: 3}
   deathSound: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
   hurtSound: {fileID: 8300000, guid: fce027b40770a44298a6f5a4233bfb04, type: 3}
-  speed: 15
+  speed: 10
   damage: 20
   timeBetAttack: 0.5
   searchRadius: 20
