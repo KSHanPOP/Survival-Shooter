@@ -28,6 +28,9 @@ public class Gun : MonoBehaviour
         bulletLineRenderer = GetComponentInChildren<LineRenderer>();
         bulletLineRenderer.positionCount = 2;
         bulletLineRenderer.enabled = false;
+
+        SoundMgr.Instance.effectAudioSources.Add(GetComponent<AudioSource>());
+
     }
 
     private void OnEnable()

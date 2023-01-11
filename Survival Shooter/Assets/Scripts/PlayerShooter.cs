@@ -13,6 +13,8 @@ public class PlayerShooter : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         playerAnimator = GetComponent<Animator>();
+
+        SoundMgr.Instance.effectAudioSources.Add(GetComponent<AudioSource>());
     }
     private void OnEnable()
     {

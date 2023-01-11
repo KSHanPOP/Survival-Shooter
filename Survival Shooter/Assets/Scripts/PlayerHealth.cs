@@ -1,18 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class PlayerHealth : LivingEntity
+using System.Collections;
+public class PlayerHealth : LivingEntity, IEnumerator
 {
     public Slider healthSlider; // 체력을 표시할 UI 슬라이더
 
     public AudioClip deathClip; // 사망 소리
     public AudioClip hitClip; // 피격 소리
 
+    public GameObject hitEffect;
+    public GameObject Gameovertext;
+
+
     private AudioSource playerAudioPlayer; // 플레이어 소리 재생기
     private Animator playerAnimator; // 플레이어의 애니메이터
 
     private PlayerMovement playerMovement; // 플레이어 움직임 컴포넌트
     private PlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
-    
+
+    public object Current => throw new System.NotImplementedException();
+
     private void Awake()
     {
         // 사용할 컴포넌트를 가져오기
@@ -44,10 +51,18 @@ public class PlayerHealth : LivingEntity
         playerAudioPlayer.PlayOneShot(hitClip);
 
         base.OnDamage(damage, hitPoint, hitDirection);
+        hitEffect.SetActive(true);
 
-        Debug.Log(health);
         healthSlider.value = health / health_Max;
-        Debug.Log(health);
+
+        StartCoroutine(Stop());
+
+
+    }
+    public IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        hitEffect.SetActive(false);
     }
     public float GetHP()
     {
@@ -66,7 +81,24 @@ public class PlayerHealth : LivingEntity
         playerShooter.enabled = false;
         playerAnimator.SetTrigger("Die");
 
-       // Invoke(UIManager.Instance.gameoverUI.SetActive(true),5f);
-        
+        StartCoroutine(StopGameOver());
+
+        // Invoke(UIManager.Instance.gameoverUI.SetActive(true),5f);
+
+    }
+    public IEnumerator StopGameOver()
+    {
+        yield return new WaitForSeconds(6f);
+        Gameovertext.SetActive(true);
+        GameManager.isGameover = false;
+    }
+    public bool MoveNext()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Reset()
+    {
+        throw new System.NotImplementedException();
     }
 }

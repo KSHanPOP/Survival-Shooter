@@ -15,7 +15,9 @@ public class EnemySpawner : MonoBehaviour
         if (Time.time < lastSpawnTime + spawnRate)
             return;
 
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         lastSpawnTime = Time.time;
+
+        SoundMgr.Instance.effectAudioSources.Add(obj.GetComponent<AudioSource>());
     }
 }
